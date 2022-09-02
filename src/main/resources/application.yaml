@@ -1,0 +1,6 @@
+logging:
+  config: classpath:log4j2.properties
+
+app:
+  stock:
+    price-cache-ttl: 15 # seconds
