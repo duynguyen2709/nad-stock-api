@@ -1,6 +1,6 @@
 package com.nad.service.impl;
 
-import com.nad.annotation.TryCatchWrap;
+import com.nad.util.annotation.TryCatchWrap;
 import com.nad.model.response.external.ExternalStockInfo;
 import com.nad.model.response.external.ExternalStockPrice;
 import com.nad.service.ExternalStockService;

@@ -37,8 +37,8 @@ public class ApplicationReady {
             }
         });
 
-        propertySources.stream().map((propertySource) ->
-                        ((Map) propertySource.getSource()).keySet())
+        propertySources.stream()
+                .map((propertySource) -> ((Map) propertySource.getSource()).keySet())
                 .flatMap(Collection::stream)
                 .distinct()
                 .sorted()
@@ -51,5 +51,4 @@ public class ApplicationReady {
                 });
         log.info("##################### End show Configuration #####################");
     }
-
 }

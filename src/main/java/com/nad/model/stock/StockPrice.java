@@ -1,6 +1,7 @@
 package com.nad.model.stock;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.nad.model.response.external.ExternalStockPrice;
 import com.nad.util.NumberUtil;
@@ -12,9 +13,10 @@ import java.io.Serializable;
  * @author duynguyen
  */
 @Getter
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class StockPrice implements Serializable {
     @JsonIgnore
-    private String symbol;
+    private final String symbol;
     @JsonProperty("ceil_price")
     private float ceilPrice;
     @JsonProperty("floor_price")

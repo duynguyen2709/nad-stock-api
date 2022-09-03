@@ -1,4 +1,4 @@
-package com.nad.controller;
+package com.nad.handler;
 
 import com.nad.model.request.GetStockPriceRequest;
 import com.nad.model.response.BaseResponse;
@@ -17,7 +17,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/v1/stocks")
 @AllArgsConstructor
-public class StockInfoController {
+public class StockInfoHandler {
 
     private final StockDataService stockListService;
 
@@ -28,8 +28,7 @@ public class StockInfoController {
 
     @GetMapping("/price")
     public BaseResponse getStockPrice(@RequestParam(name = "symbols") String symbols) {
-        GetStockPriceRequest request = GetStockPriceRequest.builder().symbols(symbols).build();
-
+        GetStockPriceRequest request = new GetStockPriceRequest(symbols);
         return Optional.ofNullable(request.validate())
                 .map(BaseResponse::failed)
                 .orElseGet(() -> BaseResponse.successData(stockListService.getStockPrice(request)));

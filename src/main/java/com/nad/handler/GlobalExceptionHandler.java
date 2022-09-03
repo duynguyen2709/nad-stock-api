@@ -1,4 +1,4 @@
-package com.nad.exception;
+package com.nad.handler;
 
 import com.nad.constant.ErrorCode;
 import com.nad.model.response.BaseResponse;

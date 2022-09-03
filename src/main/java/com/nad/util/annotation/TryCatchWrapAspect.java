@@ -1,4 +1,4 @@
-package com.nad.annotation;
+package com.nad.util.annotation;
 
 import lombok.extern.log4j.Log4j2;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Log4j2
 public class TryCatchWrapAspect {
 
-    @Around("@annotation(com.nad.annotation.TryCatchWrap)")
+    @Around("@annotation(com.nad.util.annotation.TryCatchWrap)")
     public Object wrap(ProceedingJoinPoint joinPoint) throws Throwable {
         try {
             return joinPoint.proceed();

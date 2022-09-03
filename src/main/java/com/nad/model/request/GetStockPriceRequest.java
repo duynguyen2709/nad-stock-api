@@ -17,21 +17,15 @@ import static com.nad.constant.Constant.MAX_SYMBOL_PER_PRICE_QUERY;
 /**
  * @author duynguyen
  **/
-@AllArgsConstructor
 @Data
-@Builder
 @EqualsAndHashCode(callSuper = false)
 public class GetStockPriceRequest extends RequestEntity implements Serializable {
     private List<String> symbols;
 
-    public static class GetStockPriceRequestBuilder {
-        private List<String> symbols;
-        public GetStockPriceRequestBuilder symbols(String symbolList) {
-            this.symbols = Arrays.stream(symbolList.split(","))
-                    .filter(ele -> !ele.isBlank())
-                    .collect(Collectors.toList());
-            return this;
-        }
+    public GetStockPriceRequest(String symbolList) {
+        this.symbols = Arrays.stream(symbolList.split(","))
+                .filter(ele -> !ele.isBlank())
+                .collect(Collectors.toList());
     }
 
     @Override

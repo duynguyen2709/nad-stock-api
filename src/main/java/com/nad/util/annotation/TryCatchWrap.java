@@ -1,4 +1,4 @@
-package com.nad.annotation;
+package com.nad.util.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
